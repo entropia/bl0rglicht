@@ -1,0 +1,781 @@
+Archive member included because of file (symbol)
+
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodhi4.o)
+                              obj/buffer.o (__udivmodhi4)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodsi4.o)
+                              obj/uart.o (__udivmodsi4)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+                              obj/bl0rg.o (__do_copy_data)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+                              obj/bl0rg.o (__do_clear_bss)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                              obj/pt_serloop.o (malloc)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                              obj/eeprom.o (rand)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(memset.o)
+                              obj/pt_serloop.o (memset)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(itoa.o)
+                              obj/serialio.o (itoa)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rblk.1C1D1E.o)
+                              obj/bl0rg.o (__eeprom_read_block_1C1D1E)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wb.1C1D1E.o)
+                              obj/eeprom.o (__eeprom_write_byte_1C1D1E)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wblk.1C1D1E.o)
+                              obj/eeprom.o (__eeprom_write_block_1C1D1E)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strrev.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(itoa.o) (strrev)
+C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rb.1C1D1E.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rblk.1C1D1E.o) (__eeprom_read_byte_1C1D1E)
+C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_mulsi3.o)
+                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o) (__mulsi3)
+
+Allocating common symbols
+Common symbol       size              file
+
+uartReadyTx         0x1               obj/uart.o
+uartRxBuffer        0x8               obj/uart.o
+__brkval            0x2               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+leds_copy           0x21              obj/leds.o
+leds                0x21              obj/leds.o
+uartBufferedTx      0x1               obj/uart.o
+buffer              0x80              obj/serialio.o
+anim_leds           0x30              obj/bl0rg.o
+anim_leds_dir       0x30              obj/bl0rg.o
+timerticks          0x4               obj/interrupts.o
+leds_changed        0x1               obj/leds.o
+__flp               0x2               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+uartTxBuffer        0x8               obj/uart.o
+uartRxOverflow      0x2               obj/uart.o
+idle_anim           0x4               obj/bl0rg.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+LOAD obj/bl0rg.o
+LOAD obj/uart.o
+LOAD obj/buffer.o
+LOAD obj/interrupts.o
+LOAD obj/leds.o
+LOAD obj/serialio.o
+LOAD obj/eeprom.o
+LOAD obj/delayms.o
+LOAD obj/utils.o
+LOAD obj/pt_encloop.o
+LOAD obj/pt_serloop.o
+LOAD C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libm.a
+LOAD C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a
+LOAD C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a
+LOAD C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x154c
+ *(.vectors)
+ .vectors       0x00000000       0x54 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+                0x00000054                __ctors_start = .
+ *(.ctors)
+                0x00000054                __ctors_end = .
+                0x00000054                __dtors_start = .
+ *(.dtors)
+                0x00000054                __dtors_end = .
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000054                . = ALIGN (0x2)
+ *(.init0)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000054        0xc C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+ *(.init3)
+ *(.init4)
+ .init4         0x00000060       0x16 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
+ .init4         0x00000076       0x10 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+                0x00000076                __do_clear_bss
+ *(.init5)
+ *(.init6)
+ *(.init7)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000086        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+ *(.text)
+ .text          0x0000008a        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                0x0000008a                __vector_1
+                0x0000008a                __vector_12
+                0x0000008a                __bad_interrupt
+                0x0000008a                __vector_6
+                0x0000008a                __vector_3
+                0x0000008a                __vector_17
+                0x0000008a                __vector_19
+                0x0000008a                __vector_7
+                0x0000008a                __vector_5
+                0x0000008a                __vector_4
+                0x0000008a                __vector_2
+                0x0000008a                __vector_15
+                0x0000008a                __vector_8
+                0x0000008a                __vector_14
+                0x0000008a                __vector_10
+                0x0000008a                __vector_16
+                0x0000008a                __vector_18
+                0x0000008a                __vector_20
+ .text          0x0000008e       0xe4 obj/bl0rg.o
+                0x0000008e                main
+ .text          0x00000172      0x26e obj/uart.o
+                0x000002ca                uartSendTxBuffer
+                0x0000021a                uartSendByte
+                0x000001b0                uartInitBuffers
+                0x0000022c                uartReceiveByte
+                0x000002bc                uartAddToTxBuffer
+                0x0000034c                __vector_11
+                0x00000204                uartSetRxHandler
+                0x000002de                __vector_13
+                0x0000029a                uartFlushReceiveBuffer
+                0x000001d2                uartInit
+                0x000002a4                uartReceiveBufferIsEmpty
+                0x00000172                uartSetBaudRate
+                0x00000214                uartGetTxBuffer
+                0x0000025e                uartGetByte
+                0x0000020e                uartGetRxBuffer
+ .text          0x000003e0      0x130 obj/buffer.o
+                0x000004ec                bufferIsNotFull
+                0x000003f4                bufferGetFromFront
+                0x00000482                bufferGetAtIndex
+                0x0000043e                bufferDumpFromFront
+                0x000003e0                bufferInit
+                0x000004a6                bufferAddToEnd
+                0x00000508                bufferFlush
+ .text          0x00000510      0x288 obj/interrupts.o
+                0x00000518                __vector_9
+                0x00000510                InitTimer
+ .text          0x00000798       0xb2 obj/leds.o
+                0x00000798                SetLed
+ .text          0x0000084a       0xbe obj/serialio.o
+                0x000008c8                recline
+                0x00000882                sendint
+                0x00000850                sendstring
+                0x000008c0                recchar
+                0x0000084a                sendchar
+ .text          0x00000908      0x256 obj/eeprom.o
+                0x00000908                eeprom_ok
+                0x00000920                play_eeprom
+                0x00000ab0                random_eeprom
+                0x0000095a                record_eeprom
+                0x00000a62                clear_eeprom
+ .text          0x00000b5e       0x58 obj/delayms.o
+                0x00000b86                WaitTimerTicks
+                0x00000b5e                delay_ms
+ .text          0x00000bb6       0x2e obj/utils.o
+                0x00000bb6                hextoint
+ .text          0x00000be4      0x14a obj/pt_encloop.o
+                0x00000be4                encloop
+ .text          0x00000d2e      0x3f0 obj/pt_serloop.o
+                0x00000d2e                serloop
+ .text          0x0000111e      0x1ec C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x0000111e                malloc
+                0x00001252                free
+ .text          0x0000130a       0xe6 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                0x000013ca                rand_r
+                0x000013d0                rand
+                0x000013da                srand
+ .text          0x000013f0       0x14 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x000013f0                memset
+ .text          0x00001404       0x42 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(itoa.o)
+                0x00001404                itoa
+ .text          0x00001446       0x20 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00001446                strrev
+                0x00001466                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00001466       0x28 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodhi4.o)
+                0x00001466                __udivmodhi4
+ .text.libgcc   0x0000148e       0x44 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000148e                __udivmodsi4
+ .text.eeprom   0x000014d2        0xa C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rblk.1C1D1E.o)
+                0x000014d2                __eeprom_read_block_1C1D1E
+ .text.eeprom   0x000014dc       0x18 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wb.1C1D1E.o)
+                0x000014dc                __eeprom_write_byte_1C1D1E
+ .text.eeprom   0x000014f4        0xa C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wblk.1C1D1E.o)
+                0x000014f4                __eeprom_write_block_1C1D1E
+ .text.eeprom   0x000014fe       0x10 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rb.1C1D1E.o)
+                0x000014fe                __eeprom_read_byte_1C1D1E
+ .text.libgcc   0x0000150e       0x3e C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_mulsi3.o)
+                0x0000150e                __mulsi3
+                0x0000154c                . = ALIGN (0x2)
+ *(.fini9)
+ *(.fini8)
+ *(.fini7)
+ *(.fini6)
+ *(.fini5)
+ *(.fini4)
+ *(.fini3)
+ *(.fini2)
+ *(.fini1)
+ *(.fini0)
+                0x0000154c                _etext = .
+
+.data           0x00800060       0xc6 load address 0x0000154c
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060       0x21 obj/bl0rg.o
+ .data          0x00800081        0x2 obj/interrupts.o
+                0x00800081                old_encoder_value
+ .data          0x00800083        0x3 obj/serialio.o
+ .data          0x00800086       0x41 obj/eeprom.o
+ .data          0x008000c7       0x55 obj/pt_serloop.o
+ .data          0x0080011c        0x6 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x0080011e                __malloc_heap_start
+                0x0080011c                __malloc_heap_end
+                0x00800120                __malloc_margin
+ .data          0x00800122        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+ *(.gnu.linkonce.d*)
+                0x00800126                . = ALIGN (0x2)
+                0x00800126                _edata = .
+                0x00800126                PROVIDE (__data_end, .)
+
+.bss            0x00800126      0x1d7
+                0x00800126                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800126        0x4 obj/bl0rg.o
+ .bss           0x0080012a       0x82 obj/uart.o
+ .bss           0x008001ac        0x7 obj/interrupts.o
+                0x008001ac                errflag
+                0x008001ad                encoder_value
+ .bss           0x008001b3        0x1 obj/serialio.o
+                0x008001b3                lready
+ .bss           0x008001b4        0x6 obj/pt_serloop.o
+ *(COMMON)
+ COMMON         0x008001ba       0x64 obj/bl0rg.o
+                0x008001ba                anim_leds
+                0x008001ea                anim_leds_dir
+                0x0080021a                idle_anim
+ COMMON         0x0080021e       0x14 obj/uart.o
+                0x0080021e                uartReadyTx
+                0x0080021f                uartRxBuffer
+                0x00800227                uartBufferedTx
+                0x00800228                uartTxBuffer
+                0x00800230                uartRxOverflow
+ COMMON         0x00800232        0x4 obj/interrupts.o
+                0x00800232                timerticks
+ COMMON         0x00800236       0x43 obj/leds.o
+                0x00800236                leds_copy
+                0x00800257                leds
+                0x00800278                leds_changed
+ COMMON         0x00800279       0x80 obj/serialio.o
+                0x00800279                buffer
+ COMMON         0x008002f9        0x4 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x008002f9                __brkval
+                0x008002fb                __flp
+                0x008002fd                PROVIDE (__bss_end, .)
+                0x0000154c                __data_load_start = LOADADDR (.data)
+                0x00001612                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008002fd        0x0
+                0x008002fd                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008002fd                PROVIDE (__noinit_end, .)
+                0x008002fd                _end = .
+                0x008002fd                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000      0x1f8
+ *(.eeprom*)
+ .eeprom        0x00810000      0x1f8 obj/eeprom.o
+                0x00810000                laststate
+                0x008101f8                __eeprom_end = .
+
+.stab           0x00000000      0x36c
+ *(.stab)
+ .stab          0x00000000      0x36c C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+
+.stabstr        0x00000000       0x84
+ *(.stabstr)
+ .stabstr       0x00000000       0x84 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xdc
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x14 obj/bl0rg.o
+ .debug_aranges
+                0x00000014       0x14 obj/uart.o
+ .debug_aranges
+                0x00000028       0x14 obj/buffer.o
+ .debug_aranges
+                0x0000003c       0x14 obj/interrupts.o
+ .debug_aranges
+                0x00000050       0x14 obj/leds.o
+ .debug_aranges
+                0x00000064       0x14 obj/serialio.o
+ .debug_aranges
+                0x00000078       0x14 obj/eeprom.o
+ .debug_aranges
+                0x0000008c       0x14 obj/delayms.o
+ .debug_aranges
+                0x000000a0       0x14 obj/utils.o
+ .debug_aranges
+                0x000000b4       0x14 obj/pt_encloop.o
+ .debug_aranges
+                0x000000c8       0x14 obj/pt_serloop.o
+
+.debug_pubnames
+                0x00000000      0x608
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x49 obj/bl0rg.o
+ .debug_pubnames
+                0x00000049      0x194 obj/uart.o
+ .debug_pubnames
+                0x000001dd       0x9c obj/buffer.o
+ .debug_pubnames
+                0x00000279       0xa0 obj/interrupts.o
+ .debug_pubnames
+                0x00000319       0x73 obj/leds.o
+ .debug_pubnames
+                0x0000038c       0x96 obj/serialio.o
+ .debug_pubnames
+                0x00000422       0xa1 obj/eeprom.o
+ .debug_pubnames
+                0x000004c3       0x60 obj/delayms.o
+ .debug_pubnames
+                0x00000523       0x4d obj/utils.o
+ .debug_pubnames
+                0x00000570       0x4c obj/pt_encloop.o
+ .debug_pubnames
+                0x000005bc       0x4c obj/pt_serloop.o
+
+.debug_info     0x00000000     0x1966
+ *(.debug_info)
+ .debug_info    0x00000000      0x245 obj/bl0rg.o
+ .debug_info    0x00000245      0x3ce obj/uart.o
+ .debug_info    0x00000613      0x235 obj/buffer.o
+ .debug_info    0x00000848      0x1ea obj/interrupts.o
+ .debug_info    0x00000a32      0x17b obj/leds.o
+ .debug_info    0x00000bad      0x1fe obj/serialio.o
+ .debug_info    0x00000dab      0x459 obj/eeprom.o
+ .debug_info    0x00001204      0x1d4 obj/delayms.o
+ .debug_info    0x000013d8       0xfa obj/utils.o
+ .debug_info    0x000014d2      0x15e obj/pt_encloop.o
+ .debug_info    0x00001630      0x336 obj/pt_serloop.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xb9b
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x167 obj/bl0rg.o
+ .debug_abbrev  0x00000167      0x165 obj/uart.o
+ .debug_abbrev  0x000002cc       0xb6 obj/buffer.o
+ .debug_abbrev  0x00000382       0xdd obj/interrupts.o
+ .debug_abbrev  0x0000045f       0xae obj/leds.o
+ .debug_abbrev  0x0000050d       0xfa obj/serialio.o
+ .debug_abbrev  0x00000607      0x19d obj/eeprom.o
+ .debug_abbrev  0x000007a4      0x10c obj/delayms.o
+ .debug_abbrev  0x000008b0       0x82 obj/utils.o
+ .debug_abbrev  0x00000932       0xe6 obj/pt_encloop.o
+ .debug_abbrev  0x00000a18      0x183 obj/pt_serloop.o
+
+.debug_line     0x00000000     0x1172
+ *(.debug_line)
+ .debug_line    0x00000000      0x1d2 obj/bl0rg.o
+ .debug_line    0x000001d2      0x227 obj/uart.o
+ .debug_line    0x000003f9      0x12e obj/buffer.o
+ .debug_line    0x00000527      0x1c7 obj/interrupts.o
+ .debug_line    0x000006ee       0xd6 obj/leds.o
+ .debug_line    0x000007c4      0x182 obj/serialio.o
+ .debug_line    0x00000946      0x2a4 obj/eeprom.o
+ .debug_line    0x00000bea       0xde obj/delayms.o
+ .debug_line    0x00000cc8       0xd1 obj/utils.o
+ .debug_line    0x00000d99       0xfa obj/pt_encloop.o
+ .debug_line    0x00000e93      0x2df obj/pt_serloop.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x00000000      0x59e
+ *(.debug_str)
+ .debug_str     0x00000000      0x15a obj/bl0rg.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x0000015a      0x1c3 obj/uart.o
+                                0x2c9 (size before relaxing)
+ .debug_str     0x0000031d       0x86 obj/buffer.o
+                                0x155 (size before relaxing)
+ .debug_str     0x000003a3       0x6e obj/interrupts.o
+                                0x1a2 (size before relaxing)
+ .debug_str     0x00000411       0x18 obj/leds.o
+                                0x161 (size before relaxing)
+ .debug_str     0x00000429       0x43 obj/serialio.o
+                                0x178 (size before relaxing)
+ .debug_str     0x0000046c       0x8b obj/eeprom.o
+                                0x206 (size before relaxing)
+ .debug_str     0x000004f7       0x53 obj/delayms.o
+                                0x186 (size before relaxing)
+ .debug_str     0x0000054a       0x11 obj/utils.o
+                                0x12e (size before relaxing)
+ .debug_str     0x0000055b       0x23 obj/pt_encloop.o
+                                0x150 (size before relaxing)
+ .debug_str     0x0000057e       0x20 obj/pt_serloop.o
+                                0x1bd (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(bl0rg.elf elf32-avr)
+
+Cross Reference Table
+
+Symbol                                            File
+InitTimer                                         obj/interrupts.o
+                                                  obj/bl0rg.o
+SetLed                                            obj/leds.o
+                                                  obj/pt_serloop.o
+                                                  obj/pt_encloop.o
+                                                  obj/eeprom.o
+                                                  obj/bl0rg.o
+WaitTimerTicks                                    obj/delayms.o
+__bad_interrupt                                   C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__brkval                                          C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__bss_end                                         C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+__bss_start                                       C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+__data_end                                        C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+__data_load_start                                 C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+__data_start                                      C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+__do_clear_bss                                    C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_clear_bss.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  obj/pt_serloop.o
+                                                  obj/pt_encloop.o
+                                                  obj/utils.o
+                                                  obj/delayms.o
+                                                  obj/eeprom.o
+                                                  obj/serialio.o
+                                                  obj/leds.o
+                                                  obj/interrupts.o
+                                                  obj/buffer.o
+                                                  obj/uart.o
+                                                  obj/bl0rg.o
+__do_copy_data                                    C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_copy_data.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  obj/pt_serloop.o
+                                                  obj/pt_encloop.o
+                                                  obj/utils.o
+                                                  obj/delayms.o
+                                                  obj/eeprom.o
+                                                  obj/serialio.o
+                                                  obj/leds.o
+                                                  obj/interrupts.o
+                                                  obj/buffer.o
+                                                  obj/uart.o
+                                                  obj/bl0rg.o
+__eeprom_read_block_1C1D1E                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rblk.1C1D1E.o)
+                                                  obj/eeprom.o
+                                                  obj/bl0rg.o
+__eeprom_read_byte_1C1D1E                         C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rb.1C1D1E.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_rblk.1C1D1E.o)
+__eeprom_write_block_1C1D1E                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wblk.1C1D1E.o)
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+__eeprom_write_byte_1C1D1E                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wb.1C1D1E.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(ee_wblk.1C1D1E.o)
+                                                  obj/eeprom.o
+__flp                                             C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__heap_end                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__heap_start                                      C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__init                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__malloc_heap_end                                 C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__malloc_heap_start                               C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__malloc_margin                                   C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+__mulsi3                                          C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_mulsi3.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+__stack                                           C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+                                                  obj/bl0rg.o
+__udivmodhi4                                      C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodhi4.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(itoa.o)
+                                                  obj/buffer.o
+__udivmodsi4                                      C:/WinAVR/lib/gcc/avr/3.4.6/avr5\libgcc.a(_udivmodsi4.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                                                  obj/uart.o
+__vector_1                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_10                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_11                                       obj/uart.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_12                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_13                                       obj/uart.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_14                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_15                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_16                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_17                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_18                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_19                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_2                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_20                                       C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_3                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_4                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_5                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_6                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_7                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_8                                        C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_9                                        obj/interrupts.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vector_default                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+__vectors                                         C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+anim_leds                                         obj/pt_serloop.o
+                                                  obj/pt_encloop.o
+                                                  obj/utils.o
+                                                  obj/delayms.o
+                                                  obj/eeprom.o
+                                                  obj/serialio.o
+                                                  obj/leds.o
+                                                  obj/interrupts.o
+                                                  obj/bl0rg.o
+anim_leds_dir                                     obj/pt_serloop.o
+                                                  obj/pt_encloop.o
+                                                  obj/utils.o
+                                                  obj/delayms.o
+                                                  obj/eeprom.o
+                                                  obj/serialio.o
+                                                  obj/leds.o
+                                                  obj/interrupts.o
+                                                  obj/bl0rg.o
+buffer                                            obj/pt_serloop.o
+                                                  obj/eeprom.o
+                                                  obj/serialio.o
+bufferAddToEnd                                    obj/buffer.o
+                                                  obj/uart.o
+bufferDumpFromFront                               obj/buffer.o
+bufferFlush                                       obj/buffer.o
+bufferGetAtIndex                                  obj/buffer.o
+bufferGetFromFront                                obj/buffer.o
+                                                  obj/uart.o
+bufferInit                                        obj/buffer.o
+                                                  obj/uart.o
+bufferIsNotFull                                   obj/buffer.o
+clear_eeprom                                      obj/eeprom.o
+                                                  obj/pt_serloop.o
+delay_ms                                          obj/delayms.o
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+eeprom_ok                                         obj/eeprom.o
+                                                  obj/pt_serloop.o
+                                                  obj/bl0rg.o
+encloop                                           obj/pt_encloop.o
+                                                  obj/bl0rg.o
+encoder_value                                     obj/interrupts.o
+errflag                                           obj/interrupts.o
+                                                  obj/pt_serloop.o
+free                                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+hextoint                                          obj/utils.o
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+idle_anim                                         obj/pt_serloop.o
+                                                  obj/pt_encloop.o
+                                                  obj/utils.o
+                                                  obj/delayms.o
+                                                  obj/eeprom.o
+                                                  obj/serialio.o
+                                                  obj/leds.o
+                                                  obj/interrupts.o
+                                                  obj/bl0rg.o
+itoa                                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(itoa.o)
+                                                  obj/serialio.o
+laststate                                         obj/eeprom.o
+                                                  obj/pt_serloop.o
+                                                  obj/bl0rg.o
+leds                                              obj/pt_serloop.o
+                                                  obj/eeprom.o
+                                                  obj/leds.o
+                                                  obj/interrupts.o
+                                                  obj/bl0rg.o
+leds_changed                                      obj/leds.o
+                                                  obj/interrupts.o
+leds_copy                                         obj/leds.o
+                                                  obj/interrupts.o
+lready                                            obj/serialio.o
+                                                  obj/pt_serloop.o
+                                                  obj/uart.o
+main                                              obj/bl0rg.o
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5/crtm16.o
+malloc                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  obj/pt_serloop.o
+memset                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(memset.o)
+                                                  obj/pt_serloop.o
+old_encoder_value                                 obj/interrupts.o
+play_eeprom                                       obj/eeprom.o
+                                                  obj/pt_serloop.o
+rand                                              C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+rand_r                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+random_eeprom                                     obj/eeprom.o
+                                                  obj/pt_serloop.o
+recchar                                           obj/serialio.o
+recline                                           obj/serialio.o
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+record_eeprom                                     obj/eeprom.o
+                                                  obj/pt_serloop.o
+sendchar                                          obj/serialio.o
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+sendint                                           obj/serialio.o
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+sendstring                                        obj/serialio.o
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+                                                  obj/bl0rg.o
+serloop                                           obj/pt_serloop.o
+                                                  obj/bl0rg.o
+srand                                             C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(rand.o)
+                                                  obj/pt_serloop.o
+                                                  obj/eeprom.o
+strrev                                            C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(strrev.o)
+                                                  C:/WinAVR/bin/../lib/gcc/avr/3.4.6/../../../../avr/lib/avr5\libc.a(itoa.o)
+timerticks                                        obj/pt_encloop.o
+                                                  obj/delayms.o
+                                                  obj/interrupts.o
+uartAddToTxBuffer                                 obj/uart.o
+uartBufferedTx                                    obj/uart.o
+uartFlushReceiveBuffer                            obj/uart.o
+uartGetByte                                       obj/uart.o
+                                                  obj/serialio.o
+uartGetRxBuffer                                   obj/uart.o
+uartGetTxBuffer                                   obj/uart.o
+uartInit                                          obj/uart.o
+                                                  obj/bl0rg.o
+uartInitBuffers                                   obj/uart.o
+uartReadyTx                                       obj/uart.o
+uartReceiveBufferIsEmpty                          obj/uart.o
+uartReceiveByte                                   obj/uart.o
+uartRxBuffer                                      obj/uart.o
+uartRxOverflow                                    obj/uart.o
+uartSendByte                                      obj/uart.o
+                                                  obj/serialio.o
+uartSendTxBuffer                                  obj/uart.o
+uartSetBaudRate                                   obj/uart.o
+                                                  obj/bl0rg.o
+uartSetRxHandler                                  obj/uart.o
+uartTxBuffer                                      obj/uart.o

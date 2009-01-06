@@ -1,0 +1,213 @@
+   1               		.file	"bl0rg.c"
+   2               		.arch atmega16
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               		.data
+  19               	.LC0:
+  20 0000 0A0D 00   		.string	"\n\r"
+  21               	.LC1:
+  22 0003 626C 3072 		.string	"bl0rgware firmware 0.1\n\r"
+  22      6777 6172 
+  22      6520 6669 
+  22      726D 7761 
+  22      7265 2030 
+  23               	.LC2:
+  24 001c 6F6B 0A0D 		.string	"ok\n\r"
+  24      00
+  25               		.text
+  26               	.global	main
+  28               	main:
+  29               	.LFB14:
+  30               	.LM1:
+  31               	/* prologue: frame size=0 */
+  32 0000 C0E0      		ldi r28,lo8(__stack - 0)
+  33 0002 D0E0      		ldi r29,hi8(__stack - 0)
+  34 0004 DEBF      		out __SP_H__,r29
+  35 0006 CDBF      		out __SP_L__,r28
+  36               	/* prologue end (size=4) */
+  37 0008 40E0      		ldi r20,lo8(0)
+  38 000a 50E0      		ldi r21,hi8(0)
+  39 000c 67E1      		ldi r22,lo8(23)
+  40 000e E0E0      		ldi r30,lo8(anim_leds_dir)
+  41 0010 F0E0      		ldi r31,hi8(anim_leds_dir)
+  42               	.L6:
+  43               	.LBB2:
+  44               	.LM2:
+  45 0012 CA01      		movw r24,r20
+  46 0014 8D96      		adiw r24,45
+  47 0016 9C01      		movw r18,r24
+  48 0018 97FF      		sbrs r25,7
+  49 001a 03C0      		rjmp .L5
+  50 001c 9A01      		movw r18,r20
+  51 001e 2455      		subi r18,lo8(-(172))
+  52 0020 3F4F      		sbci r19,hi8(-(172))
+  53               	.L5:
+  54 0022 2078      		andi r18,lo8(-128)
+  55 0024 821B      		sub r24,r18
+  56 0026 930B      		sbc r25,r19
+  57 0028 0A96      		adiw r24,10
+  58 002a 8193      		st Z+,r24
+  59 002c 9193      		st Z+,r25
+  60               	.LM3:
+  61 002e 6150      		subi r22,lo8(-(-1))
+  62 0030 4554      		subi r20,lo8(-(187))
+  63 0032 5F4F      		sbci r21,hi8(-(187))
+  64 0034 67FF      		sbrs r22,7
+  65 0036 EDCF      		rjmp .L6
+  66               	.LBE2:
+  67               	.LM4:
+  68 0038 81E0      		ldi r24,lo8(1)
+  69 003a 90E0      		ldi r25,hi8(1)
+  70 003c A0E0      		ldi r26,hlo8(1)
+  71 003e B0E0      		ldi r27,hhi8(1)
+  72 0040 8093 0000 		sts idle_anim,r24
+  73 0044 9093 0000 		sts (idle_anim)+1,r25
+  74 0048 A093 0000 		sts (idle_anim)+2,r26
+  75 004c B093 0000 		sts (idle_anim)+3,r27
+  76               	.LM5:
+  77 0050 0E94 0000 		call uartInit
+  78               	.LM6:
+  79 0054 60E0      		ldi r22,lo8(19200)
+  80 0056 7BE4      		ldi r23,hi8(19200)
+  81 0058 80E0      		ldi r24,hlo8(19200)
+  82 005a 90E0      		ldi r25,hhi8(19200)
+  83 005c 0E94 0000 		call uartSetBaudRate
+  84               	.LM7:
+  85 0060 80E0      		ldi r24,lo8(.LC0)
+  86 0062 90E0      		ldi r25,hi8(.LC0)
+  87 0064 0E94 0000 		call sendstring
+  88               	.LM8:
+  89 0068 80E0      		ldi r24,lo8(.LC1)
+  90 006a 90E0      		ldi r25,hi8(.LC1)
+  91 006c 0E94 0000 		call sendstring
+  92               	.LM9:
+  93 0070 8FEF      		ldi r24,lo8(-1)
+  94 0072 8ABB      		out 58-0x20,r24
+  95               	.LM10:
+  96 0074 87BB      		out 55-0x20,r24
+  97               	.LM11:
+  98 0076 84BB      		out 52-0x20,r24
+  99               	.LM12:
+ 100 0078 81BB      		out 49-0x20,r24
+ 101               	.LM13:
+ 102 007a 0E94 0000 		call InitTimer
+ 103               	.LM14:
+ 104               	/* #APP */
+ 105 007e 7894      		sei
+ 106               	.LM15:
+ 107               	/* #NOAPP */
+ 108 0080 1BBA      		out 59-0x20,__zero_reg__
+ 109               	.LM16:
+ 110 0082 18BA      		out 56-0x20,__zero_reg__
+ 111               	.LM17:
+ 112 0084 15BA      		out 53-0x20,__zero_reg__
+ 113               	.LM18:
+ 114 0086 12BA      		out 50-0x20,__zero_reg__
+ 115               	.LM19:
+ 116 0088 0E94 0000 		call eeprom_ok
+ 117               	.L7:
+ 118               	.LM20:
+ 119 008c E199      		sbic 60-0x20,1
+ 120 008e FECF      		rjmp .L7
+ 121               	.LBB3:
+ 122               	.LM21:
+ 123 0090 E0E0      		ldi r30,lo8(leds)
+ 124 0092 F0E0      		ldi r31,hi8(leds)
+ 125 0094 A0E0      		ldi r26,lo8(laststate)
+ 126 0096 B0E0      		ldi r27,hi8(laststate)
+ 127               	.LBB4:
+ 128               	.LBB5:
+ 129               	.LM22:
+ 130 0098 88E1      		ldi r24,lo8(24)
+ 131               	.LM23:
+ 132               	/* #APP */
+ 133 009a 182E      		mov __zero_reg__,r24
+ 134 009c 0E94 0000 		call __eeprom_read_block_1C1D1E
+ 135               	/* #NOAPP */
+ 136               	.LBE5:
+ 137               	.LBE4:
+ 138               	.LBE3:
+ 139               	.LM24:
+ 140 00a0 80E0      		ldi r24,lo8(.LC0)
+ 141 00a2 90E0      		ldi r25,hi8(.LC0)
+ 142 00a4 0E94 0000 		call sendstring
+ 143               	.LM25:
+ 144 00a8 80E0      		ldi r24,lo8(.LC2)
+ 145 00aa 90E0      		ldi r25,hi8(.LC2)
+ 146 00ac 0E94 0000 		call sendstring
+ 147               	.LBB6:
+ 148               	.LM26:
+ 149 00b0 C0E0      		ldi r28,lo8(0)
+ 150               	.L20:
+ 151               	.LM27:
+ 152 00b2 60E0      		ldi r22,lo8(0)
+ 153 00b4 70E0      		ldi r23,hi8(0)
+ 154 00b6 8C2F      		mov r24,r28
+ 155 00b8 0E94 0000 		call SetLed
+ 156               	.LM28:
+ 157 00bc CF5F      		subi r28,lo8(-(1))
+ 158 00be C831      		cpi r28,lo8(24)
+ 159 00c0 C0F3      		brlo .L20
+ 160               	.LBE6:
+ 161               	.LM29:
+ 162 00c2 1092 0000 		sts (serloop_pt)+1,__zero_reg__
+ 163 00c6 1092 0000 		sts serloop_pt,__zero_reg__
+ 164               	.LM30:
+ 165 00ca 1092 0000 		sts (encloop_pt)+1,__zero_reg__
+ 166 00ce 1092 0000 		sts encloop_pt,__zero_reg__
+ 167               	.L21:
+ 168               	.LM31:
+ 169 00d2 80E0      		ldi r24,lo8(serloop_pt)
+ 170 00d4 90E0      		ldi r25,hi8(serloop_pt)
+ 171 00d6 0E94 0000 		call serloop
+ 172               	.LM32:
+ 173 00da 80E0      		ldi r24,lo8(encloop_pt)
+ 174 00dc 90E0      		ldi r25,hi8(encloop_pt)
+ 175 00de 0E94 0000 		call encloop
+ 176 00e2 F7CF      		rjmp .L21
+ 177               	/* epilogue: frame size=0 */
+ 178               	/* epilogue: noreturn */
+ 179               	/* epilogue end (size=0) */
+ 180               	/* function main size 117 (113) */
+ 181               	.LFE14:
+ 183               		.comm idle_anim,4,1
+ 184               		.comm anim_leds,48,1
+ 185               		.comm anim_leds_dir,48,1
+ 186               		.lcomm serloop_pt,2
+ 187               		.lcomm encloop_pt,2
+ 188               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 bl0rg.c
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:28     .text:00000000 main
+                            *COM*:00000030 anim_leds_dir
+                            *COM*:00000004 idle_anim
+                             .bss:00000000 serloop_pt
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccCoaaaa.s:186    .bss:00000002 encloop_pt
+                            *COM*:00000030 anim_leds
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+__stack
+uartInit
+uartSetBaudRate
+sendstring
+InitTimer
+eeprom_ok
+leds
+laststate
+__eeprom_read_block_1C1D1E
+SetLed
+serloop
+encloop

@@ -1,0 +1,9 @@
+- dim-code
+- a/d(poti/musikeingang/temperatur...)
+- anschliessen des drueckers fuern encoder
+- programmieren des eeproms ueber den encoder
+- modus wechseln mithilfe drueckers
+- eeprom/flash modus als [25]. ein byte fuer die zeit
+- flag fuer weiches/hartes umblenden
+- ggf. i2c fuer bl0rg to bl0rg communication
+...

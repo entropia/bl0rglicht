@@ -1,0 +1,218 @@
+   1               		.file	"pt_encloop.c"
+   2               		.arch atmega16
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	encloop
+  20               	encloop:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24 0000 DF92      		push r13
+  25 0002 EF92      		push r14
+  26 0004 FF92      		push r15
+  27 0006 0F93      		push r16
+  28 0008 1F93      		push r17
+  29 000a CF93      		push r28
+  30 000c DF93      		push r29
+  31               	/* prologue end (size=7) */
+  32 000e 7C01      		movw r14,r24
+  33               	.LBB2:
+  34               	.LM2:
+  35 0010 DC01      		movw r26,r24
+  36 0012 8D91      		ld r24,X+
+  37 0014 9C91      		ld r25,X
+  38 0016 0097      		sbiw r24,0
+  39 0018 21F0      		breq .L4
+  40               	.LM3:
+  41 001a 4D97      		sbiw r24,29
+  42 001c 09F4      		brne .+2
+  43 001e 77C0      		rjmp .L17
+  44 0020 87C0      		rjmp .L2
+  45               	.L4:
+  46               	.LM4:
+  47 0022 8091 0000 		lds r24,idle_anim
+  48 0026 9091 0000 		lds r25,(idle_anim)+1
+  49 002a A091 0000 		lds r26,(idle_anim)+2
+  50 002e B091 0000 		lds r27,(idle_anim)+3
+  51 0032 0097      		sbiw r24,0
+  52 0034 A105      		cpc r26,__zero_reg__
+  53 0036 B105      		cpc r27,__zero_reg__
+  54 0038 61F0      		breq .L6
+  55 003a 0197      		sbiw r24,1
+  56 003c A109      		sbc r26,__zero_reg__
+  57 003e B109      		sbc r27,__zero_reg__
+  58 0040 8093 0000 		sts idle_anim,r24
+  59 0044 9093 0000 		sts (idle_anim)+1,r25
+  60 0048 A093 0000 		sts (idle_anim)+2,r26
+  61 004c B093 0000 		sts (idle_anim)+3,r27
+  62 0050 51C0      		rjmp .L7
+  63               	.L6:
+  64               	.LBB3:
+  65               	.LM5:
+  66 0052 DD24      		clr r13
+  67               	.L15:
+  68               	.LM6:
+  69 0054 CD2D      		mov r28,r13
+  70 0056 DD27      		clr r29
+  71 0058 CC0F      		add r28,r28
+  72 005a DD1F      		adc r29,r29
+  73 005c 8E01      		movw r16,r28
+  74 005e 0050      		subi r16,lo8(-(anim_leds))
+  75 0060 1040      		sbci r17,hi8(-(anim_leds))
+  76 0062 F801      		movw r30,r16
+  77 0064 6081      		ld r22,Z
+  78 0066 7181      		ldd r23,Z+1
+  79 0068 77FF      		sbrs r23,7
+  80 006a 02C0      		rjmp .L11
+  81 006c 615C      		subi r22,lo8(-(63))
+  82 006e 7F4F      		sbci r23,hi8(-(63))
+  83               	.L11:
+  84 0070 86E0      		ldi r24,6
+  85 0072 7595      	1:	asr r23
+  86 0074 6795      		ror r22
+  87 0076 8A95      		dec r24
+  88 0078 E1F7      		brne 1b
+  89 007a 8D2D      		mov r24,r13
+  90 007c 0E94 0000 		call SetLed
+  91               	.LM7:
+  92 0080 FE01      		movw r30,r28
+  93 0082 E050      		subi r30,lo8(-(anim_leds_dir))
+  94 0084 F040      		sbci r31,hi8(-(anim_leds_dir))
+  95 0086 D801      		movw r26,r16
+  96 0088 8D91      		ld r24,X+
+  97 008a 9C91      		ld r25,X
+  98 008c 1197      		sbiw r26,1
+  99 008e 2081      		ld r18,Z
+ 100 0090 3181      		ldd r19,Z+1
+ 101 0092 820F      		add r24,r18
+ 102 0094 931F      		adc r25,r19
+ 103 0096 8D93      		st X+,r24
+ 104 0098 9C93      		st X,r25
+ 105               	.LM8:
+ 106 009a 815C      		subi r24,lo8(16321)
+ 107 009c 9F43      		sbci r25,hi8(16321)
+ 108 009e 34F0      		brlt .L12
+ 109 00a0 8827      		clr r24
+ 110 00a2 9927      		clr r25
+ 111 00a4 821B      		sub r24,r18
+ 112 00a6 930B      		sbc r25,r19
+ 113 00a8 9183      		std Z+1,r25
+ 114 00aa 8083      		st Z,r24
+ 115               	.L12:
+ 116               	.LM9:
+ 117 00ac D801      		movw r26,r16
+ 118 00ae 8D91      		ld r24,X+
+ 119 00b0 9C91      		ld r25,X
+ 120 00b2 97FF      		sbrs r25,7
+ 121 00b4 1AC0      		rjmp .L10
+ 122               	.LM10:
+ 123 00b6 2081      		ld r18,Z
+ 124 00b8 3181      		ldd r19,Z+1
+ 125 00ba 85E4      		ldi r24,lo8(-187)
+ 126 00bc 9FEF      		ldi r25,hi8(-187)
+ 127 00be 289F      		mul r18,r24
+ 128 00c0 A001      		movw r20,r0
+ 129 00c2 299F      		mul r18,r25
+ 130 00c4 500D      		add r21,r0
+ 131 00c6 389F      		mul r19,r24
+ 132 00c8 500D      		add r21,r0
+ 133 00ca 1124      		clr r1
+ 134 00cc CA01      		movw r24,r20
+ 135 00ce 9A01      		movw r18,r20
+ 136 00d0 57FF      		sbrs r21,7
+ 137 00d2 02C0      		rjmp .L14
+ 138 00d4 2158      		subi r18,lo8(-(127))
+ 139 00d6 3F4F      		sbci r19,hi8(-(127))
+ 140               	.L14:
+ 141 00d8 2078      		andi r18,lo8(-128)
+ 142 00da 821B      		sub r24,r18
+ 143 00dc 930B      		sbc r25,r19
+ 144 00de 0A96      		adiw r24,10
+ 145 00e0 9183      		std Z+1,r25
+ 146 00e2 8083      		st Z,r24
+ 147               	.LM11:
+ 148 00e4 D801      		movw r26,r16
+ 149 00e6 1D92      		st X+,__zero_reg__
+ 150 00e8 1C92      		st X,__zero_reg__
+ 151               	.L10:
+ 152               	.LM12:
+ 153 00ea D394      		inc r13
+ 154 00ec B7E1      		ldi r27,lo8(23)
+ 155 00ee BD15      		cp r27,r13
+ 156 00f0 08F0      		brlo .+2
+ 157 00f2 B0CF      		rjmp .L15
+ 158               	.L7:
+ 159               	.LBE3:
+ 160               	.LM13:
+ 161 00f4 1092 0000 		sts timerticks,__zero_reg__
+ 162 00f8 1092 0000 		sts (timerticks)+1,__zero_reg__
+ 163 00fc 1092 0000 		sts (timerticks)+2,__zero_reg__
+ 164 0100 1092 0000 		sts (timerticks)+3,__zero_reg__
+ 165               	.LM14:
+ 166 0104 8DE1      		ldi r24,lo8(29)
+ 167 0106 90E0      		ldi r25,hi8(29)
+ 168 0108 F701      		movw r30,r14
+ 169 010a 9183      		std Z+1,r25
+ 170 010c 8083      		st Z,r24
+ 171               	.L17:
+ 172 010e 8091 0000 		lds r24,timerticks
+ 173 0112 9091 0000 		lds r25,(timerticks)+1
+ 174 0116 A091 0000 		lds r26,(timerticks)+2
+ 175 011a B091 0000 		lds r27,(timerticks)+3
+ 176 011e 8639      		cpi r24,lo8(150)
+ 177 0120 9105      		cpc r25,__zero_reg__
+ 178 0122 A105      		cpc r26,__zero_reg__
+ 179 0124 B105      		cpc r27,__zero_reg__
+ 180 0126 08F0      		brlo .+2
+ 181 0128 7CCF      		rjmp .L4
+ 182 012a 80E0      		ldi r24,lo8(0)
+ 183 012c 90E0      		ldi r25,hi8(0)
+ 184 012e 05C0      		rjmp .L1
+ 185               	.L2:
+ 186               	.LM15:
+ 187 0130 D701      		movw r26,r14
+ 188 0132 1D92      		st X+,__zero_reg__
+ 189 0134 1C92      		st X,__zero_reg__
+ 190 0136 82E0      		ldi r24,lo8(2)
+ 191 0138 90E0      		ldi r25,hi8(2)
+ 192               	.L1:
+ 193               	.LBE2:
+ 194               	/* epilogue: frame size=0 */
+ 195 013a DF91      		pop r29
+ 196 013c CF91      		pop r28
+ 197 013e 1F91      		pop r17
+ 198 0140 0F91      		pop r16
+ 199 0142 FF90      		pop r15
+ 200 0144 EF90      		pop r14
+ 201 0146 DF90      		pop r13
+ 202 0148 0895      		ret
+ 203               	/* epilogue end (size=8) */
+ 204               	/* function encloop size 168 (153) */
+ 205               	.LFE2:
+ 207               		.comm idle_anim,4,1
+ 208               		.comm anim_leds,48,1
+ 209               		.comm anim_leds_dir,48,1
+ 210               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 pt_encloop.c
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccyabaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccyabaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccyabaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccyabaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccyabaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccyabaaa.s:20     .text:00000000 encloop
+                            *COM*:00000004 idle_anim
+                            *COM*:00000030 anim_leds
+                            *COM*:00000030 anim_leds_dir
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+SetLed
+timerticks

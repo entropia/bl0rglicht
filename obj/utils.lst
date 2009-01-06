@@ -1,0 +1,75 @@
+   1               		.file	"utils.c"
+   2               		.arch atmega16
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	hextoint
+  20               	hextoint:
+  21               	.LFB2:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25 0000 982F      		mov r25,r24
+  26               	.LM2:
+  27 0002 8154      		subi r24,lo8(-(-65))
+  28 0004 8630      		cpi r24,lo8(6)
+  29 0006 10F4      		brsh .L2
+  30               	.LM3:
+  31 0008 9753      		subi r25,lo8(-(-55))
+  32 000a 05C0      		rjmp .L8
+  33               	.L2:
+  34               	.LM4:
+  35 000c 892F      		mov r24,r25
+  36 000e 8156      		subi r24,lo8(-(-97))
+  37 0010 8630      		cpi r24,lo8(6)
+  38 0012 20F4      		brsh .L4
+  39               	.LM5:
+  40 0014 9755      		subi r25,lo8(-(-87))
+  41               	.L8:
+  42 0016 892F      		mov r24,r25
+  43 0018 9927      		clr r25
+  44 001a 0895      		ret
+  45               	.L4:
+  46               	.LM6:
+  47 001c 892F      		mov r24,r25
+  48 001e 8053      		subi r24,lo8(-(-48))
+  49 0020 8A30      		cpi r24,lo8(10)
+  50 0022 10F4      		brsh .L6
+  51               	.LM7:
+  52 0024 9927      		clr r25
+  53 0026 0895      		ret
+  54               	.L6:
+  55               	.LM8:
+  56 0028 80E0      		ldi r24,lo8(0)
+  57 002a 90E0      		ldi r25,hi8(0)
+  58               	.LM9:
+  59 002c 0895      		ret
+  60               	/* epilogue: frame size=0 */
+  61               	/* epilogue: noreturn */
+  62               	/* epilogue end (size=0) */
+  63               	/* function hextoint size 23 (23) */
+  64               	.LFE2:
+  66               		.comm idle_anim,4,1
+  67               		.comm anim_leds,48,1
+  68               		.comm anim_leds_dir,48,1
+  69               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 utils.c
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccALaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccALaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccALaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccALaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccALaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccALaaaa.s:20     .text:00000000 hextoint
+                            *COM*:00000004 idle_anim
+                            *COM*:00000030 anim_leds
+                            *COM*:00000030 anim_leds_dir
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

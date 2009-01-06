@@ -1,0 +1,106 @@
+   1               		.file	"delayms.c"
+   2               		.arch atmega16
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  17               	.Ltext0:
+  18               	.global	delay_ms
+  20               	delay_ms:
+  21               	.LFB6:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24 0000 CF93      		push r28
+  25 0002 DF93      		push r29
+  26               	/* prologue end (size=2) */
+  27 0004 AC01      		movw r20,r24
+  28               	.LBB2:
+  29               	.LM2:
+  30 0006 20E0      		ldi r18,lo8(0)
+  31 0008 30E0      		ldi r19,hi8(0)
+  32 000a A0EA      		ldi r26,lo8(4000)
+  33 000c BFE0      		ldi r27,hi8(4000)
+  34 000e C0E0      		ldi r28,hlo8(4000)
+  35 0010 D0E0      		ldi r29,hhi8(4000)
+  36               	.L13:
+  37               	.LBB3:
+  38               	.LBB4:
+  39               	.LBB5:
+  40               	.LBB6:
+  41               	.LM3:
+  42 0012 CD01      		movw r24,r26
+  43               	/* #APP */
+  44 0014 0197      		1: sbiw r24,1
+  45 0016 F1F7      		brne 1b
+  46               	/* #NOAPP */
+  47               	.LBE6:
+  48               	.LBE5:
+  49               	.LBE4:
+  50               	.LBE3:
+  51               	.LM4:
+  52 0018 2F5F      		subi r18,lo8(-(1))
+  53 001a 3F4F      		sbci r19,hi8(-(1))
+  54 001c 4217      		cp r20,r18
+  55 001e 5307      		cpc r21,r19
+  56 0020 C0F7      		brsh .L13
+  57               	.LBE2:
+  58               	/* epilogue: frame size=0 */
+  59 0022 DF91      		pop r29
+  60 0024 CF91      		pop r28
+  61 0026 0895      		ret
+  62               	/* epilogue end (size=3) */
+  63               	/* function delay_ms size 22 (17) */
+  64               	.LFE6:
+  66               	.global	WaitTimerTicks
+  68               	WaitTimerTicks:
+  69               	.LFB7:
+  70               	.LM5:
+  71               	/* prologue: frame size=0 */
+  72               	/* prologue end (size=0) */
+  73 0028 9B01      		movw r18,r22
+  74 002a AC01      		movw r20,r24
+  75               	.LM6:
+  76 002c 1092 0000 		sts timerticks,__zero_reg__
+  77 0030 1092 0000 		sts (timerticks)+1,__zero_reg__
+  78 0034 1092 0000 		sts (timerticks)+2,__zero_reg__
+  79 0038 1092 0000 		sts (timerticks)+3,__zero_reg__
+  80               	.L17:
+  81               	.LM7:
+  82 003c 8091 0000 		lds r24,timerticks
+  83 0040 9091 0000 		lds r25,(timerticks)+1
+  84 0044 A091 0000 		lds r26,(timerticks)+2
+  85 0048 B091 0000 		lds r27,(timerticks)+3
+  86 004c 2817      		cp r18,r24
+  87 004e 3907      		cpc r19,r25
+  88 0050 4A07      		cpc r20,r26
+  89 0052 5B07      		cpc r21,r27
+  90 0054 98F7      		brsh .L17
+  91               	/* epilogue: frame size=0 */
+  92 0056 0895      		ret
+  93               	/* epilogue end (size=1) */
+  94               	/* function WaitTimerTicks size 24 (23) */
+  95               	.LFE7:
+  97               		.comm idle_anim,4,1
+  98               		.comm anim_leds,48,1
+  99               		.comm anim_leds_dir,48,1
+ 100               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 delayms.c
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:20     .text:00000000 delay_ms
+C:\DOKUME~1\aw\LOKALE~1\Temp/ccIPaaaa.s:68     .text:00000028 WaitTimerTicks
+                            *COM*:00000004 idle_anim
+                            *COM*:00000030 anim_leds
+                            *COM*:00000030 anim_leds_dir
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+timerticks

@@ -1,0 +1,325 @@
+2006-08-12 17:17  hannes
+
+	* Makefile, bl0rg.c, bl0rg.h, bl0rg.pnproj, pt_encloop.c,
+	  pt_serloop.c: split out threads to their own c-files
+
+2006-08-12 16:31  hannes
+
+	* ChangeLog.txt: added ChangeLog.txt
+
+2006-08-12 16:30  hannes
+
+	* bl0rg.h: added some more comments
+
+2006-08-12 16:25  hannes
+
+	* bl0rg.c: - enable eeprom laststate reset on reboot
+	  - enable bootup eepromplay routine
+
+2006-08-12 16:17  hannes
+
+	* Makefile, bl0rg.c, bl0rg.h, bl0rg.pnproj, delayms.c,
+	  interrupts.c, utils.c: added utils.c for utility functions
+
+2006-08-12 16:11  hannes
+
+	* Makefile, bl0rg.c, bl0rg.h, bl0rg.pnproj, delayms.c, eeprom.c:
+	  split even more code in seperate files
+
+2006-08-12 16:04  hannes
+
+	* Makefile, bl0rg.c, bl0rg.h, bl0rg.pnproj, leds.c, serialio.c:
+	  split leds code
+
+2006-08-12 15:58  hannes
+
+	* interrupt.c, interrupts.c: interrupt.c => interrupts.c
+
+2006-08-12 15:57  hannes
+
+	* Makefile, bl0rg.c, bl0rg.h, bl0rg.pnproj, interrupt.c: split out
+	  interrupt routine
+
+2006-08-12 15:51  hannes
+
+	* bl0rg.c, bl0rg.h: cleanup code/add header file bl0rg.h
+
+2006-08-12 15:45  hannes
+
+	* bl0rg.h, bl0rg.pnproj: added bl0rg.h
+
+2006-08-12 06:49  hannes
+
+	* 11_08_2006:
+
+2006-08-12 06:47  hannes
+
+	* 11_08_2006: made a copy
+
+2006-08-12 05:49  hannes
+
+	* TODO.txt: TODOs...
+
+2006-08-12 04:18  hannes
+
+	* bl0rg.c:
+
+2006-08-12 03:56  blueloop
+
+	* bl0rg.c:
+
+2006-08-12 03:53  hannes
+
+	* bl0rg.c: foo
+
+2006-08-12 03:49  blueloop
+
+	* bl0rg.c:
+
+2006-08-12 03:46  hannes
+
+	* TODO.txt: update TODO.txt
+
+2006-08-12 03:35  hannes
+
+	* bl0rg.c: cleanup
+
+2006-08-12 03:30  hannes
+
+	* bl0rg.c: explicit comment that recchar() doesn't block
+
+2006-08-12 03:20  hannes
+
+	* bl0rg.c: some working function
+
+2006-08-12 02:52  hannes
+
+	* bl0rg.c: only with encoder controlable
+
+2006-08-12 02:28  hannes
+
+	* bl0rg.c: foobar
+
+2006-08-12 02:25  hannes
+
+	* bl0rg.c: yield each loop once
+
+2006-08-12 02:18  blueloop
+
+	* bl0rg.c: Coole Dimroutine eingebaut. LED Datenanordung geändert!
+	  Zugriff nur über SetLeds()
+
+2006-08-12 02:12  hannes
+
+	* uart.c: forgot to add if-body ;)
+
+2006-08-12 02:10  hannes
+
+	* bl0rg.c: foobar for blueloop
+
+2006-08-12 02:05  hannes
+
+	* uart.c, uart.h: small changes to the uart receive interrupt:
+	  - set lready if newline charachter was received
+	  - check for escape charater and reboot if apropriate
+
+2006-08-12 00:36  hannes
+
+	* bl0rg.c, bl0rg.pnproj: added protothreads support
+
+2006-08-12 00:19  hannes
+
+	* lc-addrlabels.h, lc-switch.h, pt-sem.h: and more protothreads
+	  stuff
+
+2006-08-12 00:14  hannes
+
+	* lc.h, pt.h: adding protothreads
+
+2006-08-12 00:07  hannes
+
+	* bl0rg.c: remove debugoutput of encoder_value
+
+2006-08-12 00:00  hannes
+
+	* bl0rg.c: encoder now works
+
+2006-08-11 23:55  hannes
+
+	* bl0rg.c: test with encoder_value
+
+2006-08-11 23:47  hannes
+
+	* bl0rg.c: making compileable
+
+2006-08-11 23:46  blueloop
+
+	* bl0rg.c: encoder routine add
+
+2006-08-11 23:34  hannes
+
+	* bl0rg.c: bring it to compile
+
+2006-08-11 23:30  blueloop
+
+	* bl0rg.c:
+
+2006-08-11 23:17  hannes
+
+	* bl0rg.c: -some old code not needed any more
+
+2006-08-11 23:16  hannes
+
+	* bl0rg.c: remove old interrupt
+
+2006-08-11 23:13  hannes
+
+	* bl0rg.c, bl0rg.pnproj: foo
+
+2006-08-11 23:11  hannes
+
+	* bl0rg.c, bl0rg.h: -bl0rg.h
+
+2006-08-11 23:04  hannes
+
+	* TODO.txt: -TODO.txt
+
+2006-08-11 23:03  hannes
+
+	* bl0rg.c: fix bug with 'x' not ending programming procedure
+
+2006-08-11 23:03  hannes
+
+	* doc: remove doc
+
+2006-08-11 23:00  hannes
+
+	* TODO.txt: add TODO.txt
+
+2006-08-11 22:53  hannes
+
+	* bl0rg.c, bl0rg.h, bl0rg.pnproj: foobar
+
+2006-08-11 22:43  hannes
+
+	* Makefile, bl0rg.c, bl0rg.pnproj, encoder.c, encoder.h: remove
+	  encoder.{c,h}
+
+2006-08-11 22:28  hannes
+
+	* Makefile, bl0rg.c, bl0rg.h, bl0rg.pnproj, encoder.c, encoder.h:
+	  encoder.c
+
+2006-08-11 22:01  hannes
+
+	* encoder.c: add encoder.c
+
+2006-08-11 21:20  hannes
+
+	* bl0rg.c: foobar
+
+2006-08-11 21:17  hannes
+
+	* bl0rg.c: smaller cleanups
+
+2006-08-11 21:12  hannes
+
+	* Makefile, bl0rg.c, bl0rg.pnproj, global.h, uart.c: last cleanup
+	  after interrupt smashup
+
+2006-08-11 21:07  hannes
+
+	* bl0rg.c, global.h, rprintf.c, rprintf.h, uart.c: cleaning up
+	  code now works with avrlib
+
+2006-08-11 21:02  hannes
+
+	* Makefile: F_CPU richtig machen
+
+2006-08-11 19:36  hannes
+
+	* bl0rg.c: no doublespeed on serial console
+
+2006-08-11 19:31  hannes
+
+	* bl0rg.c, doc/avarice.pdf, doc/avr-libc-user-manual-1.4.4.pdf,
+	  doc/avrdude-5.1-manual.pdf, doc/cpp.pdf, doc/gcc.pdf,
+	  doc/gdb.pdf, doc/simulavr.pdf: added more docs
+
+2006-08-11 19:28  hannes
+
+	* doc/srecord-1.24.pdf: add more doc
+
+2006-08-11 19:26  hannes
+
+	* doc/Bl0rg-Licht.pdf, doc/atmega16.pdf, doc/doc2466.pdf: change
+	  name, add Bl0rg-Licht.pdf
+
+2006-08-11 19:23  hannes
+
+	* bl0rg.c, doc, doc/doc2466.pdf: added documentation
+
+2006-08-11 18:15  hannes
+
+	* bl0rg.pnproj, uart.c, usart.c, usart.h: remove usart.{c,h}
+
+2006-08-11 17:17  hannes
+
+	* Makefile, avrlibdefs.h, avrlibtypes.h, bl0rg.c, bl0rg.pnproj,
+	  buffer.c, buffer.h, rprintf.c, rprintf.h, uart.c, uart.h: uart
+	  interrupt mode
+
+2006-08-11 17:16  hannes
+
+	* global.h: uart interrupt mode
+
+2006-08-11 11:57  hannes
+
+	* bl0rg.c: small fixupes
+
+2006-08-11 11:53  hannes
+
+	* bl0rg.c: eeprom reading/writing support added
+
+2006-08-09 04:43  hannes
+
+	* Makefile, avrlibdefs.h, avrlibtypes.h, bl0rg.c, bl0rg.pnproj,
+	  buffer.c, buffer.h, global.h, uart.c, uart.h, usart.c, usart.h:
+	  remove/add some files
+
+2006-08-08 22:50  hannes
+
+	* Makefile, bl0rg.c, bl0rg.pnproj, uart.c, uart.h: aufraeumen
+
+2006-08-08 20:17  hannes
+
+	* bl0rg.c: some small changes
+
+2006-08-08 19:04  hannes
+
+	* avrlibdefs.h, avrlibtypes.h, bl0rg.c, buffer.c, buffer.h,
+	  global.h: new led dimming code
+
+2006-08-08 17:02  hannes
+
+	* Makefile, bl0rg.c, bl0rg.pnproj, uart.c, uart.h: now using
+	  cyclic ring buffer for uart transmission
+
+2006-08-07 05:07  hannes
+
+	* bl0rg.c: -4 brackets
+
+2006-08-07 01:46  hannes
+
+	* Makefile, avrdude-butterfly.conf, avrdude-butterfly.exe,
+	  bl0rg.c, bl0rg.pnproj, bl0rg.pnps, uart.c, uart.h: bl0rglicht
+	  zeug
+
+2006-08-06 21:10  hannes
+
+	* Makefile: added Makefile
+
+2006-08-06 20:11  hannes
+
+	* branches, tags, .:
+
