@@ -32,7 +32,7 @@ int main (void)
 	idle_anim = 1;				// Animation abspielen bis Daten vom PC kommen
 	/* UCSRA &= ~ _BV(U2X); */		// no doublespeed for serial port
 	uartInit();					// initialize UART (serial port)
-	uartSetBaudRate(BAUDRATE);	// set UART speed to 9600 baud
+	uartSetBaudRate(BAUDRATE);	// set UART speed
 	
 	sendstring("\n\r");
 	sendstring(VERSION_STRING);
